@@ -8,7 +8,7 @@
           <q-btn flat icon="home" label="Home" @click="router.push('/')" />
           <q-btn flat label="Login" @click="router.push('/login')" />
           <q-btn flat label="Logout" @click="logout" />
-          Quasar v{{ $q.version }}
+          Ver: {{ packageInfo.version }}
         </div>
       </q-toolbar>
     </q-header>
@@ -23,6 +23,7 @@
 // import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from 'stores/auth-store.js'
+import packageInfo from '../../package.json'
 
 const router = useRouter()
 const authStore = useAuthStore()

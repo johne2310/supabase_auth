@@ -2,9 +2,9 @@
 import { onMounted, ref } from 'vue'
 import { useAuthStore } from 'stores/auth-store.js'
 import supabase from 'stores/supabaseClient.js'
-// import { useRouter } from 'vue-router'
+import { useRouter } from 'vue-router'
 
-// const router = useRouter()
+const router = useRouter()
 const email = ref('')
 const authStore = useAuthStore()
 
@@ -28,6 +28,7 @@ const resetPassword = async () => {
     console.log(error)
   } else {
     console.log('User: ', data)
+    await router.push('/secret')
   }
 }
 </script>
